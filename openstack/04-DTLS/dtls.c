@@ -1,4 +1,4 @@
-#include "../04-DTLS/dtls.h"
+#include "dtls.h"
 
 #include "opendefs.h"
 #include "openudp.h"
