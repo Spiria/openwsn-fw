@@ -30,7 +30,7 @@ sources_c = [
     os.path.join('04-TRAN','opencoap.c'),
     os.path.join('04-TRAN','opentcp.c'),
     os.path.join('04-TRAN','openudp.c'),
-    os.path.join('04-TRAN','DTLS','dtls.c'),
+    os.path.join('04-DTLS','dtls.c'),
     #=== cross-layers
     os.path.join('cross-layers','idmanager.c'),
     os.path.join('cross-layers','openqueue.c'),
@@ -62,7 +62,7 @@ sources_h = [
     os.path.join('04-TRAN','opencoap.h'),
     os.path.join('04-TRAN','opentcp.h'),
     os.path.join('04-TRAN','openudp.h'),
-    os.path.join('04-TRAN','DTLS','dtls.h'),
+    os.path.join('04-DTLS','dtls.h'),
     #=== cross-layers
     os.path.join('cross-layers','idmanager.h'),
     os.path.join('cross-layers','openqueue.h'),
@@ -102,7 +102,7 @@ else:
             os.path.join('#','openstack','03a-IPHC'),
             os.path.join('#','openstack','03b-IPv6'),
             os.path.join('#','openstack','04-TRAN'),
-            os.path.join('#','openstack','04-TRAN','DTLS'),
+            os.path.join('#','openstack','04-DTLS'),
             os.path.join('#','openstack','cross-layers'),
             # openapps
             # TODO: remove once cleaned-up?
