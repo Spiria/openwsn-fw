@@ -4,6 +4,7 @@
 #include "packetfunctions.h"
 #include "forwarding.h"
 #include "openqueue.h"
+#include "DTLS/dtls.h"
 // applications
 #include "opencoap.h"
 #include "uecho.h"
@@ -96,6 +97,10 @@ void openudp_receive(OpenQueueEntry_t* msg) {
       packetfunctions_tossHeader(msg,sizeof(udp_ht));
    }
    
+   if(is_dtls_packet(msg)){
+	   dtls_receive(msg);
+   }
+
    switch(msg->l4_destination_port) {
       case WKP_UDP_COAP:
          opencoap_receive(msg);

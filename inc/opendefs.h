@@ -231,6 +231,7 @@ enum {
    ERR_INVALIDPACKETFROMRADIO          = 0x37, // invalid packet frome radio, length {1} (code location {0})
    ERR_BUSY_RECEIVING                  = 0x38, // busy receiving when stop of serial activity, buffer input length {1} (code location {0})
    ERR_WRONG_CRC_INPUT                 = 0x39, // wrong CRC in input Buffer (input length {0})
+   ERR_DTLS_PACKET_RECEIVED            = 0x3a, // dtls packet received
 };
 
 //=========================== typedef =========================================
@@ -270,6 +271,7 @@ typedef struct {
    //l4
    uint8_t       l4_protocol;                    // l4 protocol to be used
    bool          l4_protocol_compressed;         // is the l4 protocol header compressed?
+   bool          l4_dtls_enabled;                // is DTLS enabled?
    uint16_t      l4_sourcePortORicmpv6Type;      // l4 source port
    uint16_t      l4_destination_port;            // l4 destination port
    uint8_t*      l4_payload;                     // pointer to the start of the payload of l4 (used for retransmits)
