@@ -14,6 +14,8 @@
 #include "bsp_timer.h"
 #include "radio.h"
 #include "radiotimer.h"
+#include "RTC_WDT.h"
+#include "RTC.h"
 
 //=========================== variables =======================================
 
@@ -50,6 +52,7 @@ void board_init() {
    bsp_timer_init();
    radio_init();
    radiotimer_init();
+   WDT_1sec_wake();
    
    // enable interrupts
    __bis_SR_register(GIE);

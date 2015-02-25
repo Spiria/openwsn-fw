@@ -27,6 +27,8 @@ source = [
     'radiotimer.c',
     'spi.c',
     'uart.c',
+    'RTC_WDT.c',
+    'RTC.c',
     cc2420,
 ]
 
