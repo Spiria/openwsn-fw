@@ -4,7 +4,6 @@
 #include "packetfunctions.h"
 #include "forwarding.h"
 #include "openqueue.h"
-#include "dtls.h"
 // applications
 #include "opencoap.h"
 #include "uecho.h"
