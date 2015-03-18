@@ -17,6 +17,8 @@
 #include "techo.h"
 // UDP
 #include "uecho.h"
+// Test Module
+#include "ctest.h"
 
 //=========================== variables =======================================
 
@@ -38,4 +40,6 @@ void openapps_init(void) {
    techo_init();
    // UDP
    uecho_init();
+   // Test Module
+   ctest_init();
 }
