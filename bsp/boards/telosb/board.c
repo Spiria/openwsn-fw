@@ -52,7 +52,7 @@ void board_init() {
    bsp_timer_init();
    radio_init();
    radiotimer_init();
-   WDT_1sec_wake();
+   //WDT_1sec_wake(); // Disable Watchdog in this moment.
    
    // enable interrupts
    __bis_SR_register(GIE);
