@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="openwsn-fw" InternalType="">
+  <VirtualDirectory Name="openwsn-fw">
+    <VirtualDirectory Name="projects">
+      <VirtualDirectory Name="xpressohack">
+        <VirtualDirectory Name="OpenWSN_OS">
+          <VirtualDirectory Name="src">
+            <VirtualDirectory Name="OpenAL">
+              <VirtualDirectory Name="internal">
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openal_app_manager.c"/>
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openal_app_manager.h"/>
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openal_event_manager.c"/>
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openal_event_manager.h"/>
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openal_internal_common.h"/>
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openmote_pindefs.c"/>
+                <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/internal/openmote_pindefs.h"/>
+              </VirtualDirectory>
+              <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/events.c"/>
+              <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/events.h"/>
+              <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/pins.c"/>
+              <File Name="projects/xpressohack/OpenWSN_OS/src/OpenAL/pins.h"/>
+            </VirtualDirectory>
+            <File Name="projects/xpressohack/OpenWSN_OS/src/cr_startup_lpc17.c"/>
+            <File Name="projects/xpressohack/OpenWSN_OS/src/FreeRTOSConfig.h"/>
+            <File Name="projects/xpressohack/OpenWSN_OS/src/main.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_timers">
+          <VirtualDirectory Name="application">
+            <File Name="projects/xpressohack/01bsp_timers/application/cr_startup_lpc176x.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_spi">
+          <VirtualDirectory Name="application">
+            <File Name="projects/xpressohack/01bsp_spi/application/cr_startup_lpc176x.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio">
+          <VirtualDirectory Name="application">
+            <File Name="projects/xpressohack/01bsp_radio/application/cr_startup_lpc176x.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_leds">
+          <VirtualDirectory Name="application">
+            <File Name="projects/xpressohack/01bsp_leds/application/cr_startup_lpc176x.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_spi">
+          <VirtualDirectory Name="src">
+            <File Name="projects/xpressohack/00std_spi/src/cr_startup_lpc176x.c"/>
+            <File Name="projects/xpressohack/00std_spi/src/main.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_eui64b">
+          <VirtualDirectory Name="src">
+            <File Name="projects/xpressohack/00std_eui64b/src/cr_startup_lpc176x.c"/>
+            <File Name="projects/xpressohack/00std_eui64b/src/main1.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="wsn430v14">
+        <VirtualDirectory Name="00std_clocks">
+          <File Name="projects/wsn430v14/00std_clocks/00std_clocks.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_eui64">
+          <File Name="projects/wsn430v14/00std_eui64/00std_eui64.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_leds_xtal">
+          <File Name="projects/wsn430v14/00std_leds_xtal/00std_leds_xtal.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_spi">
+          <File Name="projects/wsn430v14/00std_spi/00std_spi.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_uart">
+          <File Name="projects/wsn430v14/00std_uart/00std_uart.c"/>
+        </VirtualDirectory>
+        <File Name="projects/wsn430v14/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="wsn430v13b">
+        <VirtualDirectory Name="00std_button">
+          <File Name="projects/wsn430v13b/00std_button/00std_button.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_clocks">
+          <File Name="projects/wsn430v13b/00std_clocks/00std_clocks.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_eui64">
+          <File Name="projects/wsn430v13b/00std_eui64/00std_eui64.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_i2c">
+          <File Name="projects/wsn430v13b/00std_i2c/00std_i2c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_leds_xtal">
+          <File Name="projects/wsn430v13b/00std_leds_xtal/00std_leds_xtal.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_spi">
+          <File Name="projects/wsn430v13b/00std_spi/00std_spi.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_uart">
+          <File Name="projects/wsn430v13b/00std_uart/00std_uart.c"/>
+        </VirtualDirectory>
+        <File Name="projects/wsn430v13b/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="telosb">
+        <VirtualDirectory Name="00std_button">
+          <File Name="projects/telosb/00std_button/00std_button.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_chromatic">
+          <File Name="projects/telosb/00std_chromatic/00std_chromatic.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_clocks">
+          <File Name="projects/telosb/00std_clocks/00std_clocks.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_eui64">
+          <File Name="projects/telosb/00std_eui64/00std_eui64.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_i2c">
+          <File Name="projects/telosb/00std_i2c/00std_i2c.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_leds_xtal">
+          <File Name="projects/telosb/00std_leds_xtal/00std_leds_xtal.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_spi">
+          <File Name="projects/telosb/00std_spi/00std_spi.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_uart">
+          <File Name="projects/telosb/00std_uart/00std_uart.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_uart0">
+          <File Name="projects/telosb/00std_uart0/00std_uart0.c"/>
+        </VirtualDirectory>
+        <File Name="projects/telosb/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="samr21_xpro">
+        <VirtualDirectory Name="03oos_openwsn">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/03oos_openwsn/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/03oos_openwsn/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="03oos_macpong">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/03oos_macpong/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/03oos_macpong/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="02drv_opentimers">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/02drv_opentimers/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/02drv_opentimers/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_uart">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_uart/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_uart/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_timer">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_timer/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_timer/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_spi">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_spi/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_spi/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radiotimer">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_radiotimer/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_radiotimer/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio_tx">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_radio_tx/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_radio_tx/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio_rx">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_radio_rx/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_radio_rx/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_radio/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_radio/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_leds">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_leds/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_leds/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_flash">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_flash/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_flash/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <File Name="projects/samr21_xpro/01bsp_flash/01bsp_flash.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_closetimers">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_closetimers/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_closetimers/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_bothtimers">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/01bsp_bothtimers/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/01bsp_bothtimers/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_low_power_mode">
+          <VirtualDirectory Name="cmsis">
+            <VirtualDirectory Name="src">
+              <File Name="projects/samr21_xpro/00std_low_power_mode/cmsis/src/startup_samr21.c"/>
+              <File Name="projects/samr21_xpro/00std_low_power_mode/cmsis/src/system_samr21.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <File Name="projects/samr21_xpro/00std_low_power_mode/00std_low_power_mode.c"/>
+          <File Name="projects/samr21_xpro/00std_low_power_mode/configureRadio.c"/>
+          <File Name="projects/samr21_xpro/00std_low_power_mode/configureRadio.h"/>
+        </VirtualDirectory>
+        <File Name="projects/samr21_xpro/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="openmotestm">
+        <VirtualDirectory Name="01bsp_flash">
+          <VirtualDirectory Name="application">
+            <File Name="projects/openmotestm/01bsp_flash/application/01bsp_flash.c"/>
+            <File Name="projects/openmotestm/01bsp_flash/application/stm32f10x_conf.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_low_power_mode">
+          <File Name="projects/openmotestm/00std_low_power_mode/00std_low_power_mode.c"/>
+        </VirtualDirectory>
+        <File Name="projects/openmotestm/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="iot-lab_M3">
+        <VirtualDirectory Name="01bsp_bsp_timer">
+          <File Name="projects/iot-lab_M3/01bsp_bsp_timer/Makefile"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_leds">
+          <File Name="projects/iot-lab_M3/01bsp_leds/Makefile"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio_tx">
+          <File Name="projects/iot-lab_M3/01bsp_radio_tx/Makefile"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radiotimer">
+          <File Name="projects/iot-lab_M3/01bsp_radiotimer/Makefile"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_uart">
+          <File Name="projects/iot-lab_M3/01bsp_uart/Makefile"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="02drv_opentimers">
+          <File Name="projects/iot-lab_M3/02drv_opentimers/Makefile"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="03oos_openwsn">
+          <File Name="projects/iot-lab_M3/03oos_openwsn/Makefile"/>
+        </VirtualDirectory>
+        <File Name="projects/iot-lab_M3/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="gina">
+        <VirtualDirectory Name="00std_eui64">
+          <File Name="projects/gina/00std_eui64/00std_eui64.c"/>
+          <File Name="projects/gina/00std_eui64/00std_eui64.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_leds_xtal">
+          <File Name="projects/gina/00std_leds_xtal/00std_leds_xtal.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_timers">
+          <File Name="projects/gina/00std_timers/00std_timers.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_uart">
+          <File Name="projects/gina/00std_uart/00std_uart.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="02drv_headsup">
+          <File Name="projects/gina/02drv_headsup/02drv_headsup.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="old">
+          <File Name="projects/gina/old/imu_loop.c"/>
+          <File Name="projects/gina/old/intersection.c"/>
+          <File Name="projects/gina/old/test_fuelgauge.c"/>
+          <File Name="projects/gina/old/test_gyro.c"/>
+          <File Name="projects/gina/old/test_hybrid_arq.c"/>
+          <File Name="projects/gina/old/test_i2c_connnected_slaves.c"/>
+          <File Name="projects/gina/old/test_imu.c"/>
+          <File Name="projects/gina/old/test_imu_radio.c"/>
+          <File Name="projects/gina/old/test_large_range_accel.c"/>
+          <File Name="projects/gina/old/test_magnetometer.c"/>
+          <File Name="projects/gina/old/test_pwm.c"/>
+          <File Name="projects/gina/old/test_radio.c"/>
+          <File Name="projects/gina/old/test_sensitive_accel_temperature.c"/>
+        </VirtualDirectory>
+        <File Name="projects/gina/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="common">
+        <VirtualDirectory Name="01bsp_bothtimers">
+          <File Name="projects/common/01bsp_bothtimers/01bsp_bothtimers.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_bsp_timer">
+          <File Name="projects/common/01bsp_bsp_timer/01bsp_bsp_timer.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_closetimers">
+          <File Name="projects/common/01bsp_closetimers/01bsp_closetimers.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_debugpins">
+          <File Name="projects/common/01bsp_debugpins/01bsp_debugpins.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_eui64">
+          <File Name="projects/common/01bsp_eui64/01bsp_eui64.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_leds">
+          <File Name="projects/common/01bsp_leds/01bsp_leds.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio">
+          <File Name="projects/common/01bsp_radio/01bsp_radio.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio_rx">
+          <File Name="projects/common/01bsp_radio_rx/01bsp_radio_rx.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radio_tx">
+          <File Name="projects/common/01bsp_radio_tx/01bsp_radio_tx.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_radiotimer">
+          <File Name="projects/common/01bsp_radiotimer/01bsp_radiotimer.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_spi">
+          <File Name="projects/common/01bsp_spi/01bsp_spi.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="01bsp_uart">
+          <File Name="projects/common/01bsp_uart/01bsp_uart.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="02drv_openserial">
+          <File Name="projects/common/02drv_openserial/02drv_openserial.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="02drv_opentimers">
+          <File Name="projects/common/02drv_opentimers/02drv_opentimers.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="03oos_macpong">
+          <File Name="projects/common/03oos_macpong/03oos_macpong.c"/>
+          <File Name="projects/common/03oos_macpong/03oos_macpong.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="03oos_mercator">
+          <File Name="projects/common/03oos_mercator/03oos_mercator.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="03oos_openwsn">
+          <File Name="projects/common/03oos_openwsn/03oos_openwsn.c"/>
+          <File Name="projects/common/03oos_openwsn/03oos_openwsn.h"/>
+        </VirtualDirectory>
+        <File Name="projects/common/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="agilefox">
+        <VirtualDirectory Name="01bsp_flash">
+          <VirtualDirectory Name="application">
+            <File Name="projects/agilefox/01bsp_flash/application/01bsp_flash.c"/>
+            <File Name="projects/agilefox/01bsp_flash/application/stm32f10x_conf.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="00std_low_power_mode">
+          <File Name="projects/agilefox/00std_low_power_mode/00std_low_power_mode.c"/>
+          <File Name="projects/agilefox/00std_low_power_mode/configureRadio.c"/>
+          <File Name="projects/agilefox/00std_low_power_mode/configureRadio.h"/>
+        </VirtualDirectory>
+        <File Name="projects/agilefox/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="OpenMote-CC2538">
+        <File Name="projects/OpenMote-CC2538/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="python">
+        <File Name="projects/python/SConscript"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="z1">
+        <File Name="projects/z1/SConscript"/>
+      </VirtualDirectory>
+      <File Name="projects/SConscript"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="openstack">
+      <VirtualDirectory Name="02a-MAClow">
+        <File Name="openstack/02a-MAClow/adaptive_sync.c"/>
+        <File Name="openstack/02a-MAClow/adaptive_sync.h"/>
+        <File Name="openstack/02a-MAClow/IEEE802154.c"/>
+        <File Name="openstack/02a-MAClow/IEEE802154.h"/>
+        <File Name="openstack/02a-MAClow/IEEE802154E.c"/>
+        <File Name="openstack/02a-MAClow/IEEE802154E.h"/>
+        <File Name="openstack/02a-MAClow/topology.c"/>
+        <File Name="openstack/02a-MAClow/topology.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="02b-MAChigh">
+        <File Name="openstack/02b-MAChigh/neighbors.c"/>
+        <File Name="openstack/02b-MAChigh/neighbors.h"/>
+        <File Name="openstack/02b-MAChigh/otf.c"/>
+        <File Name="openstack/02b-MAChigh/otf.h"/>
+        <File Name="openstack/02b-MAChigh/processIE.c"/>
+        <File Name="openstack/02b-MAChigh/processIE.h"/>
+        <File Name="openstack/02b-MAChigh/schedule.c"/>
+        <File Name="openstack/02b-MAChigh/schedule.h"/>
+        <File Name="openstack/02b-MAChigh/sixtop.c"/>
+        <File Name="openstack/02b-MAChigh/sixtop.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="03a-IPHC">
+        <File Name="openstack/03a-IPHC/iphc.c"/>
+        <File Name="openstack/03a-IPHC/iphc.h"/>
+        <File Name="openstack/03a-IPHC/openbridge.c"/>
+        <File Name="openstack/03a-IPHC/openbridge.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="03b-IPv6">
+        <File Name="openstack/03b-IPv6/forwarding.c"/>
+        <File Name="openstack/03b-IPv6/forwarding.h"/>
+        <File Name="openstack/03b-IPv6/icmpv6.c"/>
+        <File Name="openstack/03b-IPv6/icmpv6.h"/>
+        <File Name="openstack/03b-IPv6/icmpv6echo.c"/>
+        <File Name="openstack/03b-IPv6/icmpv6echo.h"/>
+        <File Name="openstack/03b-IPv6/icmpv6rpl.c"/>
+        <File Name="openstack/03b-IPv6/icmpv6rpl.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="04-TRAN">
+        <File Name="openstack/04-TRAN/opencoap.c"/>
+        <File Name="openstack/04-TRAN/opencoap.h"/>
+        <File Name="openstack/04-TRAN/opentcp.c"/>
+        <File Name="openstack/04-TRAN/opentcp.h"/>
+        <File Name="openstack/04-TRAN/openudp.c"/>
+        <File Name="openstack/04-TRAN/openudp.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cross-layers">
+        <File Name="openstack/cross-layers/idmanager.c"/>
+        <File Name="openstack/cross-layers/idmanager.h"/>
+        <File Name="openstack/cross-layers/openqueue.c"/>
+        <File Name="openstack/cross-layers/openqueue.h"/>
+        <File Name="openstack/cross-layers/openrandom.c"/>
+        <File Name="openstack/cross-layers/openrandom.h"/>
+        <File Name="openstack/cross-layers/packetfunctions.c"/>
+        <File Name="openstack/cross-layers/packetfunctions.h"/>
+      </VirtualDirectory>
+      <File Name="openstack/openstack.c"/>
+      <File Name="openstack/openstack.h"/>
+      <File Name="openstack/SConscript"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="openapps">
+      <VirtualDirectory Name="c6t">
+        <File Name="openapps/c6t/c6t.c"/>
+        <File Name="openapps/c6t/c6t.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cexample">
+        <File Name="openapps/cexample/cexample.c"/>
+        <File Name="openapps/cexample/cexample.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cinfo">
+        <File Name="openapps/cinfo/cinfo.c"/>
+        <File Name="openapps/cinfo/cinfo.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cleds">
+        <File Name="openapps/cleds/cleds.c"/>
+        <File Name="openapps/cleds/cleds.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cstorm">
+        <File Name="openapps/cstorm/cstorm.c"/>
+        <File Name="openapps/cstorm/cstorm.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ctest">
+        <File Name="openapps/ctest/ctest.c"/>
+        <File Name="openapps/ctest/ctest.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="cwellknown">
+        <File Name="openapps/cwellknown/cwellknown.c"/>
+        <File Name="openapps/cwellknown/cwellknown.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="rrt">
+        <File Name="openapps/rrt/rrt.c"/>
+        <File Name="openapps/rrt/rrt.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="techo">
+        <File Name="openapps/techo/techo.c"/>
+        <File Name="openapps/techo/techo.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="tohlone">
+        <File Name="openapps/tohlone/tohlone.c"/>
+        <File Name="openapps/tohlone/tohlone.h"/>
+        <File Name="openapps/tohlone/tohlone_webpages.c"/>
+        <File Name="openapps/tohlone/tohlone_webpages.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="uecho">
+        <File Name="openapps/uecho/uecho.c"/>
+        <File Name="openapps/uecho/uecho.h"/>
+      </VirtualDirectory>
+      <File Name="openapps/openapps.c"/>
+      <File Name="openapps/openapps.h"/>
+      <File Name="openapps/SConscript"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="kernel">
+      <VirtualDirectory Name="openos">
+        <File Name="kernel/openos/scheduler.c"/>
+        <File Name="kernel/openos/SConscript"/>
+      </VirtualDirectory>
+      <File Name="kernel/scheduler.h"/>
+      <File Name="kernel/SConscript"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="drivers">
+      <VirtualDirectory Name="common">
+        <File Name="drivers/common/openhdlc.c"/>
+        <File Name="drivers/common/openhdlc.h"/>
+        <File Name="drivers/common/openserial.c"/>
+        <File Name="drivers/common/openserial.h"/>
+        <File Name="drivers/common/opentimers.c"/>
+        <File Name="drivers/common/opentimers.h"/>
+        <File Name="drivers/common/SConscript"/>
+      </VirtualDirectory>
+      <File Name="drivers/SConscript"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="bsp">
+      <VirtualDirectory Name="chips">
+        <VirtualDirectory Name="cc2420">
+          <File Name="bsp/chips/cc2420/cc2420.h"/>
+          <File Name="bsp/chips/cc2420/radio.c"/>
+          <File Name="bsp/chips/cc2420/SConscript"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="boards">
+        <VirtualDirectory Name="common">
+          <File Name="bsp/boards/common/abstimer.c"/>
+          <File Name="bsp/boards/common/abstimers2.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="telosb">
+          <File Name="bsp/boards/telosb/board.c"/>
+          <File Name="bsp/boards/telosb/board_info.h"/>
+          <File Name="bsp/boards/telosb/bsp_timer.c"/>
+          <File Name="bsp/boards/telosb/debugpins.c"/>
+          <File Name="bsp/boards/telosb/eui64.c"/>
+          <File Name="bsp/boards/telosb/leds.c"/>
+          <File Name="bsp/boards/telosb/radiotimer.c"/>
+          <File Name="bsp/boards/telosb/RTC.c"/>
+          <File Name="bsp/boards/telosb/RTC.h"/>
+          <File Name="bsp/boards/telosb/RTC_WDT.c"/>
+          <File Name="bsp/boards/telosb/RTC_WDT.h"/>
+          <File Name="bsp/boards/telosb/SConscript"/>
+          <File Name="bsp/boards/telosb/spi.c"/>
+          <File Name="bsp/boards/telosb/uart.c"/>
+        </VirtualDirectory>
+        <File Name="bsp/boards/board.h"/>
+        <File Name="bsp/boards/bsp_timer.h"/>
+        <File Name="bsp/boards/debugpins.h"/>
+        <File Name="bsp/boards/eui64.h"/>
+        <File Name="bsp/boards/i2c.h"/>
+        <File Name="bsp/boards/leds.h"/>
+        <File Name="bsp/boards/radio.h"/>
+        <File Name="bsp/boards/radiotimer.h"/>
+        <File Name="bsp/boards/SConscript"/>
+        <File Name="bsp/boards/sctimer.h"/>
+        <File Name="bsp/boards/spi.h"/>
+        <File Name="bsp/boards/toolchain_defs.h"/>
+        <File Name="bsp/boards/uart.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="inc">
+      <File Name="inc/opendefs.h"/>
+      <File Name="inc/SConscript"/>
+    </VirtualDirectory>
+    <File Name="SConscript"/>
+    <File Name="SConstruct"/>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="MSPGCC" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="MSPGCC" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
