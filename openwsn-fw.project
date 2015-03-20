@@ -490,9 +490,9 @@
         <File Name="openapps/cstorm/cstorm.c"/>
         <File Name="openapps/cstorm/cstorm.h"/>
       </VirtualDirectory>
-      <VirtualDirectory Name="ctest">
-        <File Name="openapps/ctest/ctest.c"/>
-        <File Name="openapps/ctest/ctest.h"/>
+      <VirtualDirectory Name="ctestapp">
+        <File Name="openapps/ctestapp/ctestapp.c"/>
+        <File Name="openapps/ctestapp/ctestapp.h"/>
       </VirtualDirectory>
       <VirtualDirectory Name="cwellknown">
         <File Name="openapps/cwellknown/cwellknown.c"/>

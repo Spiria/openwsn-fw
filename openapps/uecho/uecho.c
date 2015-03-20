@@ -39,7 +39,6 @@ void uecho_receive(OpenQueueEntry_t* request) {
    reply->l4_destination_port           = request->l4_sourcePortORicmpv6Type;
    reply->l4_sourcePortORicmpv6Type     = temp_l4_destination_port;
    reply->l3_destinationAdd.type        = ADDR_128B;
-   reply->l4_dtls_enabled               = TRUE;
    
    // copy source to destination to echo.
    memcpy(&reply->l3_destinationAdd.addr_128b[0],&request->l3_sourceAdd.addr_128b[0],16);

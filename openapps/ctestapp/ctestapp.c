@@ -3,7 +3,6 @@
 */
 
 #include "opendefs.h"
-#include "ctest.h"
 #include "opencoap.h"
 #include "opentimers.h"
 #include "openqueue.h"
@@ -11,10 +10,10 @@
 #include "openserial.h"
 #include "openrandom.h"
 #include "scheduler.h"
-//#include "ADC_Channel.h"
 #include "idmanager.h"
 #include "IEEE802154E.h"
 #include "leds.h"
+#include "ctestapp.h"
 
 //=========================== defines =========================================
 
@@ -121,15 +120,15 @@ owerror_t ctest_receive(OpenQueueEntry_t* msg,
          } else if (msg->payload[0] == '1') {
             ipAddr_targetMote = ipAddr_target4C84;
             currTarget = 1;
-         } else if (msg->payload[0] == '2'{
+         } else if (msg->payload[0] == '2'){
             ipAddr_targetMote = ipAddr_target4C9A;
             currTarget = 2;
          } else if (msg->payload[0] == 'D'){
-            opentimers_stop(ctest_vars.timerID);
+            opentimers_stop(ctest_vars.tID);
          } else if (msg->payload[0] == 'E'){
             ipAddr_targetMote = ipAddr_target4C6E;
             currTarget = 0;
-            ctest_vars.timerId    = opentimers_start(CTESTPERIOD,
+            ctest_vars.tId    = opentimers_start(CTESTPERIOD,
                                                 TIMER_PERIODIC,TIME_MS,
                                                 ctest_timer_cb);            
          }
@@ -139,7 +138,7 @@ owerror_t ctest_receive(OpenQueueEntry_t* msg,
          
          coap_header->Code = COAP_CODE_RESP_CHANGED;
          
-         outcome E_SUCCESS;
+         outcome = E_SUCCESS;
          break;
          
       default:
@@ -152,64 +151,64 @@ owerror_t ctest_receive(OpenQueueEntry_t* msg,
 
 // Timer Fired
 void ctest_timer_cb(opentimer_id_t id){
-  scheduler_push_task(ctest_task_cb, TASKPRIO_COAP);
+   scheduler_push_task(ctest_task_cb, TASKPRIO_COAP);
 }
 
 void ctest_task_cb(){
-  OpenQueueEntry_t*   pkt;
-  owerror_t           outcome;
+   OpenQueueEntry_t*   pkt;
+   owerror_t           outcome;
 
-  uint8_t i=0;
+   uint8_t i=0;
 
-  // don't run if not synced
-  if(ieee154e_isSynch() == FALSE) return;
+   // don't run if not synced
+   if(ieee154e_isSynch() == FALSE) return;
 
-  // don't run on dagroot
-  if(idmanger_getIsDAGRoot()){
-    opentimers_stop(ctest_vars.timerID);
-    return;
-  }
+   // don't run on dagroot
+   if(idmanger_getIsDAGRoot()){
+      opentimers_stop(ctest_vars.tId);
+      return;
+   }
 
 
   // Create CoAP Packet
-  pkt = openqueue_getFreePacketBuffer(COMPONENT_CTEST);
-  if(pkt == NULL){
-    openserial_printError(
-			  COMPONENT_CTEST,
-			  ERR_NO_FREE_PACKET_BUFFER,
-			  (errorparameter_t)0,
-			  (errorparameter_t)0
-			  );
-    openqueue_freePacketBuffer(pkt);
-    return;
-  }
+   pkt = openqueue_getFreePacketBuffer(COMPONENT_CTEST);
+   if(pkt == NULL){
+      openserial_printError(
+            COMPONENT_CTEST,
+            ERR_NO_FREE_PACKET_BUFFER,
+            (errorparameter_t)0,
+            (errorparameter_t)0
+            );
+      openqueue_freePacketBuffer(pkt);
+      return;
+   }
 
-  // assign ownership
-  pkt->creator = COMPONENT_CTEST;
-  pkt->owner   = COMPONENT_CTEST;
+   // assign ownership
+   pkt->creator = COMPONENT_CTEST;
+   pkt->owner   = COMPONENT_CTEST;
 
-  // Process i
-  i = (++i)%2;
-
-  packetfunctions_reserveHeaderSize(pkt, 1);
-  pkt->payload[0] = i;
-
-  packetfunctions_reserveHeaderSize(pkt, 1);
-  pkt->payload[0] = COAP_PAYLOAD_MARKER;
-
-   // content-type option
-   packetfunctions_reserveHeaderSize(pkt,2);
-   pkt->payload[0]                = (COAP_OPTION_NUM_CONTENTFORMAT - COAP_OPTION_NUM_URIPATH) << 4
-                                    | 1;
-   pkt->payload[1]                = COAP_MEDTYPE_APPOCTETSTREAM;
-  
    // Location-path option
    packetfunctions_reserveHeaderSize(pkt, sizeof(ctest_ledpath)-1);
    memcpy(&pkt->payload[0], ctest_ledpath, sizeof(ctest_ledpath)-1);
    packetfunctions_reserveHeadersize(pkt,1);
    packetfunctions_reserveHeaderSize(pkt,1);
    pkt->payload[0]                = ((COAP_OPTION_NUM_URIPATH) << 4) | (sizeof(ctest_ledpath)-1);
-     
+
+   // content-type option
+   packetfunctions_reserveHeaderSize(pkt,2);
+   pkt->payload[0]                = (COAP_OPTION_NUM_CONTENTFORMAT - COAP_OPTION_NUM_URIPATH) << 4
+                                    | 1;
+   pkt->payload[1]                = COAP_MEDTYPE_APPOCTETSTREAM;
+
+   // Process i
+   i = (++i)%2;
+
+   packetfunctions_reserveHeaderSize(pkt, 1);
+   pkt->payload[0] = i;
+
+   packetfunctions_reserveHeaderSize(pkt, 1);
+   pkt->payload[0] = COAP_PAYLOAD_MARKER;
+       
    // metadata
    pkt->l4_destination_port       = WKP_UDP_COAP;
    pkt->l3_destinationAdd.type    = ADDR_128B;

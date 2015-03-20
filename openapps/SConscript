@@ -15,7 +15,6 @@ defaultApps   = [
     'techo',
     'uecho',
     'rrt',
-    'ctest',
 ]
 if localEnv['board']=='python':
     defaultApps  += [
