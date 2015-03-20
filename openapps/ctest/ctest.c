@@ -13,7 +13,7 @@
 #include "idmanager.h"
 #include "IEEE802154E.h"
 #include "leds.h"
-#include "ctestapp.h"
+#include "ctest.h"
 
 //=========================== defines =========================================
 
@@ -124,7 +124,7 @@ owerror_t ctest_receive(OpenQueueEntry_t* msg,
             ipAddr_targetMote = ipAddr_target4C9A;
             currTarget = 2;
          } else if (msg->payload[0] == 'D'){
-            opentimers_stop(ctest_vars.tID);
+            opentimers_stop(ctest_vars.tId);
          } else if (msg->payload[0] == 'E'){
             ipAddr_targetMote = ipAddr_target4C6E;
             currTarget = 0;
@@ -164,7 +164,7 @@ void ctest_task_cb(){
    if(ieee154e_isSynch() == FALSE) return;
 
    // don't run on dagroot
-   if(idmanger_getIsDAGRoot()){
+   if(idmanager_getIsDAGroot()){
       opentimers_stop(ctest_vars.tId);
       return;
    }
@@ -190,7 +190,7 @@ void ctest_task_cb(){
    // Location-path option
    packetfunctions_reserveHeaderSize(pkt, sizeof(ctest_ledpath)-1);
    memcpy(&pkt->payload[0], ctest_ledpath, sizeof(ctest_ledpath)-1);
-   packetfunctions_reserveHeadersize(pkt,1);
+   packetfunctions_reserveHeaderSize(pkt,1);
    packetfunctions_reserveHeaderSize(pkt,1);
    pkt->payload[0]                = ((COAP_OPTION_NUM_URIPATH) << 4) | (sizeof(ctest_ledpath)-1);
 
