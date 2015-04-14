@@ -31,7 +31,7 @@ void     cleds_sendDone(
 //=========================== public ==========================================
 
 void cleds__init() {
-   
+
    // prepare the resource descriptor for the /l path
    cleds_vars.desc.path0len            = sizeof(cleds_path0)-1;
    cleds_vars.desc.path0val            = (uint8_t*)(&cleds_path0);
@@ -40,7 +40,7 @@ void cleds__init() {
    cleds_vars.desc.componentID         = COMPONENT_CLEDS;
    cleds_vars.desc.callbackRx          = &cleds_receive;
    cleds_vars.desc.callbackSendDone    = &cleds_sendDone;
-   
+
    // register with the CoAP module
    opencoap_register(&cleds_vars.desc);
 }
@@ -63,13 +63,13 @@ owerror_t cleds_receive(
       coap_option_iht*  coap_options
    ) {
    owerror_t outcome;
-   
+
    switch (coap_header->Code) {
       case COAP_CODE_REQ_GET:
          // reset packet payload
          msg->payload                     = &(msg->packet[127]);
          msg->length                      = 0;
-         
+
          // add CoAP payload
          packetfunctions_reserveHeaderSize(msg,2);
          msg->payload[0]                  = COAP_PAYLOAD_MARKER;
@@ -79,13 +79,13 @@ owerror_t cleds_receive(
          } else {
             msg->payload[1]               = '0';
          }
-            
+
          // set the CoAP header
          coap_header->Code                = COAP_CODE_RESP_CONTENT;
-         
+
          outcome                          = E_SUCCESS;
          break;
-      
+
       case COAP_CODE_REQ_PUT:
       
          // change the LED's state
@@ -96,22 +96,22 @@ owerror_t cleds_receive(
          } else {
             leds_error_off();
          }
-         
+
          // reset packet payload
          msg->payload                     = &(msg->packet[127]);
          msg->length                      = 0;
-         
+
          // set the CoAP header
          coap_header->Code                = COAP_CODE_RESP_CHANGED;
-         
+
          outcome                          = E_SUCCESS;
          break;
-         
+
       default:
          outcome                          = E_FAIL;
          break;
    }
-   
+
    return outcome;
 }
 
