@@ -1,52 +1,56 @@
 /**
-\brief A CoAP resource which allows an application to GET/SET the state of the
-   error LED.
+\brief An example CoAP application.
 */
 
 #include "opendefs.h"
-#include "cleds.h"
+#include "opentimers.h"
+
+// CoAP Control
 #include "opencoap.h"
-#include "packetfunctions.h"
-#include "leds.h"
-#include "openqueue.h"
+
+// Relay Control
+#include "msp430f1611.h"
+#include "brelay.h"
+
+//=========================== defines =========================================
 
 //=========================== variables =======================================
-
-cleds_vars_t cleds_vars;
-
-const uint8_t cleds_path0[]       = "l";
+brelay_vars_t brelay_vars;
+// Path
+const uint8_t brelay_path0[] = "relay";
+int relay_status = 0;
 
 //=========================== prototypes ======================================
-
-owerror_t cleds_receive(
+owerror_t brelay_receive(
    OpenQueueEntry_t* msg,
    coap_header_iht*  coap_header,
    coap_option_iht*  coap_options
-);
-void     cleds_sendDone(
-   OpenQueueEntry_t* msg,
-   owerror_t error
-);
+   );
+void    brelay_sendDone(OpenQueueEntry_t* msg,
+                       owerror_t error);
+
 
 //=========================== public ==========================================
 
-void cleds__init() {
+void brelay_init() {
+  P2SEL |= 0x00; // Set P2.0 as GPIO
+  P2DIR |= 0x01; // Set P2.0 as Output
+  P2OUT |= 0x00; // Disconnect at first (Low : Disconnect, High: Connect)
+  relay_status = 0; // Disconnected
 
-   // prepare the resource descriptor for the /l path
-   cleds_vars.desc.path0len            = sizeof(cleds_path0)-1;
-   cleds_vars.desc.path0val            = (uint8_t*)(&cleds_path0);
-   cleds_vars.desc.path1len            = 0;
-   cleds_vars.desc.path1val            = NULL;
-   cleds_vars.desc.componentID         = COMPONENT_CLEDS;
-   cleds_vars.desc.callbackRx          = &cleds_receive;
-   cleds_vars.desc.callbackSendDone    = &cleds_sendDone;
+   // prepare the resource descriptor for the /ex path
+   brelay_vars.desc.path0len             = sizeof(brelay_path0)-1;
+   brelay_vars.desc.path0val             = (uint8_t*)(&brelay_path0);
+   brelay_vars.desc.path1len             = 0;
+   brelay_vars.desc.path1val             = NULL;
+   brelay_vars.desc.componentID          = COMPONENT_BRELAY;
+   brelay_vars.desc.callbackRx           = &brelay_receive;
+   brelay_vars.desc.callbackSendDone     = &brelay_sendDone;
 
-   // register with the CoAP module
-   opencoap_register(&cleds_vars.desc);
+   // Register with the CoAP Module
+   opencoap_register(&brelay_vars.desc);
 }
-
 //=========================== private =========================================
-
 /**
 \brief Called when a CoAP message is received for this resource.
 
@@ -57,7 +61,7 @@ void cleds__init() {
 
 \return Whether the response is prepared successfully.
 */
-owerror_t cleds_receive(
+owerror_t brelay_receive(
       OpenQueueEntry_t* msg,
       coap_header_iht*  coap_header,
       coap_option_iht*  coap_options
@@ -74,7 +78,7 @@ owerror_t cleds_receive(
          packetfunctions_reserveHeaderSize(msg,2);
          msg->payload[0]                  = COAP_PAYLOAD_MARKER;
 
-         if (leds_error_isOn()==1) {
+         if (relay_status==1) {
             msg->payload[1]               = '1';
          } else {
             msg->payload[1]               = '0';
@@ -87,14 +91,14 @@ owerror_t cleds_receive(
          break;
 
       case COAP_CODE_REQ_PUT:
-      
+
          // change the LED's state
-         if (msg->payload[0]=='1') {
-            leds_error_on();
-         } else if (msg->payload[0]=='2') {
-            leds_error_toggle();
-         } else {
-            leds_error_off();
+         if (msg->payload[0]=='E') {
+           P2OUT |= 0x01; // Set to High
+           relay_status = 1;
+         } else if (msg->payload[0]=='D') {
+           P2OUT &= 0x00; // Set to Low
+          relay_status = 0;
          }
 
          // reset packet payload
@@ -121,6 +125,6 @@ owerror_t cleds_receive(
 \param[in] msg The CoAP message just sent.
 \param[in] error The outcome of sending it.
 */
-void cleds_sendDone(OpenQueueEntry_t* msg, owerror_t error) {
+void brelay_sendDone(OpenQueueEntry_t* msg, owerror_t error) {
    openqueue_freePacketBuffer(msg);
 }

@@ -95,7 +95,7 @@ void openudp_receive(OpenQueueEntry_t* msg) {
       msg->l4_destination_port        = msg->payload[2]*256+msg->payload[3];
       packetfunctions_tossHeader(msg,sizeof(udp_ht));
    }
-   
+
    switch(msg->l4_destination_port) {
       case WKP_UDP_COAP:
          opencoap_receive(msg);

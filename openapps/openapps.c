@@ -17,6 +17,8 @@
 #include "techo.h"
 // UDP
 #include "uecho.h"
+// Test Module
+#include "ctestapp.h"
 
 //=========================== variables =======================================
 
