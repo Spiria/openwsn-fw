@@ -157,7 +157,7 @@ enum {
    COMPONENT_TOHLONE                   = 0x21,
    COMPONENT_UECHO                     = 0x22,
    COMPONENT_RRT                       = 0x23,
-   COMPONENT_CTEST                     = 0x24,
+   COMPONENT_BRELAY                    = 0x24,
 };
 
 /**
@@ -231,11 +231,6 @@ enum {
    ERR_INVALIDPACKETFROMRADIO          = 0x37, // invalid packet frome radio, length {1} (code location {0})
    ERR_BUSY_RECEIVING                  = 0x38, // busy receiving when stop of serial activity, buffer input length {1} (code location {0})
    ERR_WRONG_CRC_INPUT                 = 0x39, // wrong CRC in input Buffer (input length {0})
-   // CTEST
-   ERR_CTEST_GOT_PACKET                = 0x40, // got led enable packet
-   ERR_CTEST_ENABLED                   = 0x41, // ctest enabled
-   ERR_CTEST_TARGET_CHANGED            = 0x42, // ctest target changed
-   ERR_CTEST_TARGET_INFO               = 0x43, // got ctest target info request
 };
 
 //=========================== typedef =========================================
