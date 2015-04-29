@@ -33,9 +33,9 @@ void    brelay_sendDone(OpenQueueEntry_t* msg,
 //=========================== public ==========================================
 
 void brelay_init() {
-  P2SEL &= (~BIT0); // Set P2.0 as GPIO
-  P2DIR &= (BIT0); // Set P2.0 as Output
-  P2OUT = 0x00; // Disconnect at first (Low : Disconnect, High: Connect)
+  P2SEL |= 0x00; // Set P2.0 as GPIO
+  P2DIR |= 0x01; // Set P2.0 as Output
+  P2OUT |= 0x00; // Disconnect at first (Low : Disconnect, High: Connect)
   relay_status = 0; // Disconnected
 
    // prepare the resource descriptor for the /ex path
@@ -94,10 +94,10 @@ owerror_t brelay_receive(
 
          // change the LED's state
          if (msg->payload[0]=='E') {
-           P2OUT = 0x01; // (Low : Disconnect, High: Connect)
+           P2OUT |= 0x01; // Set to High
            relay_status = 1;
          } else if (msg->payload[0]=='D') {
-           P2OUT = 0x00; // (Low : Disconnect, High: Connect)
+           P2OUT &= 0x00; // Set to Low
           relay_status = 0;
          }
 
