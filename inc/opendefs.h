@@ -158,6 +158,7 @@ enum {
    COMPONENT_UECHO                     = 0x22,
    COMPONENT_RRT                       = 0x23,
    COMPONENT_BRELAY                    = 0x24,
+   COMPONENT_BPIR                      = 0x25,
 };
 
 /**

@@ -1,5 +1,5 @@
-#ifndef __BRELAY_H
-#define __BRELAY_H
+#ifndef __BPIR_H
+#define __BPIR_H
 
 /**
 \addtogroup AppUdp
@@ -14,13 +14,13 @@
 
 typedef struct {
    coap_resource_desc_t desc;
-} brelay_vars_t;
+} bpir_vars_t;
 
 //=========================== variables =======================================
 
 //=========================== prototypes ======================================
 
-void brelay_init(void);
+void bpir_init(void);
 
 /**
 \}

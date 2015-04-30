@@ -15,7 +15,7 @@
 //=========================== defines =========================================
 
 //=========================== variables =======================================
-brelay_vars_t bpir_vars;
+bpir_vars_t bpir_vars;
 // Path
 const uint8_t bpir_path0[] = "pir";
 int pir_status = 0;
@@ -45,7 +45,7 @@ void bpir_init() {
    bpir_vars.desc.path0val             = (uint8_t*)(&bpir_path0);
    bpir_vars.desc.path1len             = 0;
    bpir_vars.desc.path1val             = NULL;
-   bpir_vars.desc.componentID          = COMPONENT_BRELAY;
+   bpir_vars.desc.componentID          = COMPONENT_BPIR;
    bpir_vars.desc.callbackRx           = &bpir_receive;
    bpir_vars.desc.callbackSendDone     = &bpir_sendDone;
 
@@ -136,6 +136,6 @@ owerror_t bpir_receive(
 \param[in] msg The CoAP message just sent.
 \param[in] error The outcome of sending it.
 */
-void brelay_sendDone(OpenQueueEntry_t* msg, owerror_t error) {
+void bpir_sendDone(OpenQueueEntry_t* msg, owerror_t error) {
    openqueue_freePacketBuffer(msg);
 }
